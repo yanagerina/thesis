@@ -15,7 +15,7 @@
 
 
 
-\title{Each period: 1 consumer, two producers}
+\title{Random consumer in a perceived [0,y] linear city under duopoly}
 \author{Iana Gerina}
 \date{\today}
 %\geometry{
@@ -31,78 +31,10 @@
 \maketitle
 
 
-\section{$\alpha$ - probability of seeing the entrant}
+\section{Introduction}
+Two producers on the market: one is incumbent and one is entrant. Suppose location of incumbent and entrant is set: 0 for incumbent and 1 for entrant; however, the consumer perceives the location of entrant as $y>1$ in the first period. The strategies of the producers are then prices: $p_{inc}$ and $p_{e}$ - price of incumbent and entrant respectively. Consumer chooses between the option offered by the incumbent and the entrant (and an outside option, whose value we set to 0), and if in the first period the entrant is chosen, his true location is revealed to the consumer in the second period.
 
-As a basis we take the standard linear city Hotelling model, where consumers are distributed uniformly on (0,1). The supply side is reperesented by two producers: the entrant and the incumbent. While the incumbent is known to the consumers, the entrant first needs to be noticed by them. 
-
-Assume in each period only 1 consumer is looking to buy the good. Let us denote $\alpha \in (0,1)$ as the probability of entrant being noticed. Then, there are two states of the world in each period:
-
-\begin{itemize}
-    \item with probability $\alpha$ we arrive at state 1: duopoly, the demand that the producers face is reminiscent of standard Hotelling model;
-    \item with probability $1-\alpha$ we arrive at state 2: monopoly, where consumer obly sees the incumbent.
-\end{itemize}
-
-Consider a one-period game. If $\alpha = 0$ the incumbent is always a monopolist. What is the pricing strategy under monopoly? The incumbent solves:
-$$\max_{p^{inc}} (p^{inc}-c)* Pr(p^{inc}\leq v-t*x)$$
-
-The demand the monopoly faces is then $\frac{v-p^{inc}}{t}$ as $Pr(p^{inc}\leq v-t*x) = Pr(x\leq \frac{v-p^{inc}}{t})$. Imposing market coverage condition $\frac{v-p^{inc}}{t} \geq  1$, we get $p \leq v-t$. The optimal price coming from maximisation problem is $p=v/2$ and for any $t \leq v/2$ the market coverage condition holds. However, it is obvious that under this condition $v-t \geq v/2$, so the incumbent strictly prefers to set the price $p^{inc} = v-t = \pi^{inc}$ as the probability of attracting the consumer is the same in both cases. Thus, to simplify analysis we restrict $t \leq v/2$. 
-
-If, on the other hand, $\alpha=1$, the game is basically the standard linear city model with duopoly. The demands that incumbent and entrant face are, in same order:
-$$ x =  \tfrac{p^{e}_2 - p^{inc}_2}{2t} + 1/2 $$
-$$1-x = \tfrac{p^{inc}_2 - p^{e}_2}{2t} + 1/2$$
-
-Yet again, we want to insure market coverage, which only occurs if $t<2v/3$. Since we already assumed $t \leq v/2$, no additional assumption is needed.
-
-Let us expand the model to encompass two periods. The information structure is as follows: the probability of entrant being seen is known to both entrant and incumbent, and so is the event of entrant being noticed. Until that point both producers assume he was not and assign probability $\alpha$ to that event happening in each period. If consumer gets noticed in the first period, $\alpha =1$ in the second period.To simplify matters further, let us assume c=0 for both producers. We start from the second period.
-
-As was mentioned above, we have two possible states: if entrant was noticed in the first period and if he wasn't. If \textbf{entrant was noticed}, the solution is straightforward, as it is the prices, demands and profits of standard Hotelling duopoly, that we already established. The equilibrium prices are then: $p^{inc}_2 = p^{e}_2 = t+c$ and as we establichd c=0, the price is then just equal to transportation cost. The profits in this case are 1/2t for each of the firms.
-
-However, if the \textbf{entrant was not noticed}, the solution is less straightforward. With probability $\alpha$ the state is a duopoly with corresoonding duopolistic demands that the producers face and with probability $1- \alpha$ it's a monopoly with corresponding demand described above. 
-The expected profits in the second period that they maximise are then:
-
-$$ \pi^{inc}_2 = (1-\alpha)(v-t) +  \alpha(Pr(x \leq \tfrac{p^{e}_2 - p^{inc}_2}{2t}) + 1/2)$$
-
-$$ \pi^{e}_2 = \alpha *p_2^{e}(Pr(x > \tfrac{p^{e}_2 - p^{inc}_2}{2t}) + 1/2)
-$$
-
-Solving for optimal price we get:
-
-$$
-p_2^{inc} = t + 4/3 \tfrac{1-\alpha}{\alpha}(v-t)t$$
-$$
-p_2^{e} = t + 2/3\tfrac{1-\alpha}{\alpha}(v-t)t
-$$
-
-Notice that for $\alpha = 1$ the prices of both incumbent and entrant are our duopoly prices from one-period game and for $\alpha -> 0$ the prices of both producers tend to infinity, with the incumbent's price increasing at a higher rate. 
-Substituting optimal prices into the profit equation we get: 
-
-$$ \pi^{inc}_2 = \tfrac{2-\alpha}{2t}(\tfrac{4v(1-\alpha) + 3\alpha t}{8-5\alpha})^2$$
-
-$$ \pi^{e}_2 = \tfrac{\alpha}{2t}(\tfrac{(4-\alpha)t}{8-5\alpha} + \tfrac{2(1-\alpha)v}{8-5\alpha})^2 
-$$
-Notice that for $\alpha=0$ the profit of entrant is 0 and the profit of incumbent is the monopolist profit $\tfrac{v^2}{4t}$ and for $\alpha=1$ the profits are again the dupoly profits $1/2t$ for both producers.
-
-Discounted sums of profits in the first period for both producers can be then written as:
-
- $$ \pi^{inc} = (1-\alpha)(\tfrac{v-p_1^{inc}}{t}*p_1^{inc}) +  \alpha p^{inc}_1(\tfrac{p^{e}_1 - p^{inc}_1}{2t} + 1/2) + \beta(Pr(x \leq \tfrac{p^{e}_1 - p^{inc}_1}{2t} + 1/2)( \tfrac{2-\alpha}{2t}(\tfrac{4v(1-\alpha) + 3\alpha t}{8-5\alpha})^2 + 1/2t(Pr(x > \tfrac{p^{inc}_1 - p^{e}_1}{2t} + 1/2)))  $$
-   
- $$ \pi^{e} = \alpha p^{e}_1(Pr(x > \tfrac{p^{e}_1 - p^{inc}_1}{2t} + 1/2)) + \beta(Pr(x \leq \tfrac{p^{e}_1 - p^{inc}_1}{2t} + 1/2)*\tfrac{\alpha}{2t}(\tfrac{(4-\alpha)t}{8-5\alpha} + \tfrac{2(1-\alpha)v}{8-5\alpha})^2 + 1/2t(Pr(x > \tfrac{p^{e}_1 - p^{inc}_1}{2t} + 1/2))) $$
-
-For ease of reading, let us denote $(\tfrac{(4v(1-\alpha) + 3\alpha t)}{8-5\alpha})^2$ as m and $(\tfrac{((4-\alpha)t + 2(1-\alpha)v)}{8-5\alpha})^2$ as n. Then, solving for optimal prices we get:
-
-$$ p^{inc}_1 = \tfrac{3\alpha}{8-5\alpha}t + \tfrac{4(1-\alpha)}{8-5\alpha}v + \tfrac{\beta t}{2(8-5\alpha)} + \tfrac{\alpha \beta m - 2\beta(2-\alpha)n}{2t(8-5\alpha)}$$
-
-$$ p^{e}_1 = \tfrac{t(4-\alpha)}{8-5\alpha} +\tfrac{2(1-\alpha)v}{8-5\alpha} + \tfrac{\alpha \beta m + \beta n (4-3\alpha)}{4t(8-5\alpha)} - \beta t \tfrac{4-3\alpha}{2\alpha(8-5\alpha)} 
-$$
-
-
-\textbf{(I would really appreciate if you could look into the price equations: I don't see a way to simplify them, and that is suspicious to me)}.
-
-Notice that when $\alpha = 1$ the price of the incumbent is simply t like in Hotelling model and that both prices look like second period prices, if you ingnore the part multiplied by $\beta$. We'' look into comparative statics when the prices equations are confimerd to be true.
-\section{Perceived [0,y] linear city}
-Assume we have two producers on the market: one is incumbent and one is entrant. Suppose location of incumbent and entrant is set: 0 for incumbent and 1 for entrant, however, the consumer perceives the location of entrant as $y>1$ in the first period. The strategies of the producers are then prices: $p_{inc}$ and $p_{e}$ - price of incumbent and entrant respectively. Consumer chooses between the option offered by the incumbent and the entrant (and an outside option, whose value we set to 0), and if in the first period the entrant is chosen, his true location is revealed to the consumer in the second period.
-
-As the original model talks about a set of consumers, whose tastes are distributed uniformly on [0,1], our model's one consumer setting leads to a different demand estimation technique. If v is consumer's valuation of the object and x is his location, which is a random draw from U[0,1], then his utility is:
+As the original model talks about a set of consumers, we need to adjust the demand estimation accordingly. We consider only x high enough that the consumer must buy one of the products (which is often the case for bus tickets). The consumer's utility is:
 
     $$ U = \begin{cases}
     v - t*x - p_{inc} &  \text{if } v-t*x - p_{inc} \geq v - t(y-x) - p_{e}\\
@@ -126,11 +58,11 @@ $$\max_{p^{inc}} (p^{inc}-c)(\frac{p_{e}-p_{inc}}{2t} + 1/2y)$$
 and entrant's profit-maximising problem to:
 $$\max_{p^{e}} (p^{e}-c)(\frac{p_{inc}-p_{e}}{2t} + 1 - 1/2y)$$
 
-\subsection{Random consumer location, no network effects}
+\section{Baseline two-period model}
     
-    Suppose we only have one consumer, who is located differently in each period (random draw from U[0,1]). Once consumer is located s.t. the entrant's good is his best option, in the next periods he perceives the true location of the entrant.
+    Consider a following market interaction: in each period one consumer enters the market to buy one unit of good. In each period the consumer  is located differently with his location x being a random draw from U[0,1]. Once consumer is located s.t. the entrant's good is his best option and thus buys entrant's good, in the next periods he perceives the true location of the entrant.
     
-    Suppose we have a two-period game. Then from the first period point of view, the probability of the entrant being seen in the second period depends on the probability of him being the best option in the first period. Thus, we can write the optimization problem in the first period for both incumbent and entrant as follows:
+    We have a two-period game. Then from the first period point of view, the probability of the entrant being seen in the second period depends on the probability of him being the best option in the first period. Thus, we can write the optimization problem in the first period for both incumbent and entrant as follows:
     
     $$ \begin{aligned}
     \max_{p^{inc}_1, p^{inc}_2} {}
@@ -149,6 +81,7 @@ $$\max_{p^{e}} (p^{e}-c)(\frac{p_{inc}-p_{e}}{2t} + 1 - 1/2y)$$
     $$
 where $x_1$, $x_2$ are locations of the consumer in each period. 
 
+\subsection{Derivation}
     
 Solving by backward induction, we first discuss the equilibrium conditions in the second period. 
 If entrant is noticed, the solution corresponds to classic Hotelling and the profit is then standard $\pi_{2}^{inc} = \pi_{2}^{e}= t/2$. However, if entrant is not noticed, equilibrium prices are as follows:
@@ -182,6 +115,8 @@ p^{inc}_1 =1/3t(y+ 2) + c - \frac{\beta t }{54}(y-1)(17+y) $$
 $$ p^{e}_1 =4/3t - 1/3yt + c - \frac{\beta t}{54}(y-1)(19-y)$$
 Notice that for both the prices the RHS until the $ \beta$ component correspond to our second period equilibrium, the 'unnoticed entrant' state, which in turn collapses to the standard result, when y=1. There is also no dynamic effect in the price, if y=1, as the component becomes 0 - also quite logical, as the dynamic effect appears because of the difference between two states' profits in the second period. 
 
+\subsection{Comparative statics}
+
 From the graph it is obvious that high learning cost, modelled via y, has an obvious negative impact on entrant's profit and price. Interestingly, higher valuation of the future profits results in the increase of them for both producers, which makes sense as the price is chosen in a dynamic way so as to receive optimal profits in the secon period as well. The myopic producer does not perceive that there are profits to be had in the second period at all. The most curious is the optimal price of the producer in the non-myopic case: it stays almost the same and even decreases with higher values of y if producer is maximally forward-looking. The incumbent does not dare increase the price in the first period as he is afraid of entrant being noticed; moreso when his loss from entrant being tested is the highest with y the highest. The entrant is also forced to lower his price more and more as compared to the myopic case, as he has a lot to gain from being tested, going for high values of y to 0. The profits of incumbent are increasing exponentially with y regardless, as he is reaping benefits from high probability of him being the closest in consumer's eyes. 
 
 \begin{center}
@@ -192,14 +127,125 @@ From the graph it is obvious that high learning cost, modelled via y, has an obv
 \includegraphics[scale=0.7]{random_consumer_location_prices.png}
 \includegraphics[scale=0.7]{random_consumer_location_profits.png}
 
-\subsection{Random consumer location, network effects}
+\includegraphics[scale=0.7]{baseline_profits_incumbent.png}
+\includegraphics[scale=0.7]{baseline_profits_entrant.png}
+\includegraphics[scale=0.7]{baseline_prices_incumbent.png}\\
+\includegraphics[scale=0.7]{baseline_prices_entrant.png}
 
-(no results yet)
+\section{Probability $\alpha$ of being perceived at the right location}
+
+We build on assumptions of the base model in this section, but consider additionally that there is a chance that the entrant's true location will be noticed in each period. The probability of this happenning we define as $\alpha \in [0,1]$. 
+
+The intuition behind this assumption could be that entrant invests in advertising and thus makes his presence known to the consumer (which could be additiionally modelled by assuming different costs for incumbent and entrant); or, the entrant is a big company, whose products in other markets are known to consumers and they are thus less reluctant to try out the new good. In the case of bus lines, "Blablabus" is a daughter company of "Blablacar", which has been used by many for travelling and thus has already some consumers familiar with it. These consumers would not be as deterred by the company's newcomer's status as other consumers probably are.
+
+\subsection{Derivation}
+
+Consider a one-period model. If $\alpha = 0$, then the model collapses to the one in the introduction. If $\alpha = 1$, on the other hand, then the model is simply the original Hotelling model and does not require additional derivation. 
+
+For ease of calculation, set c=0. If $alpha \in (0,1)$, the producers solve the following maximisation problems:
+
+$$\max_{p^{inc}} p^{inc}* (\alpha Pr(x \leq \frac{p_{e}-p_{inc}}{2t} + 1/2) + (1-\alpha)Pr(x \leq \frac{p_{e}-p_{inc}}{2t} + 1/2y))$$
+
+$$\max_{p^{e}} p^{e}* (\alpha Pr(x > \frac{p_{e}-p_{inc}}{2t} + 1/2) + (1-\alpha)Pr(x > \frac{p_{e}-p_{inc}}{2t} + 1 - 1/2y))$$
+
+Solving for equilibrium price we get:
+$$p^{inc} = \alpha t + \tfrac{(1-\alpha)(2+y)t}{3}$$
+$$p^{e} = \alpha t + \tfrac{(1-\alpha)(4-y)t}{3}$$
+
+You can see that if $\alpha = 0$ the solution corresponds to that of the base model second period maximisation, and if $\alpha = 1$ the prices collapse to Hotelling linear city $p=t$.
+
+The corresponding profits are $\pi^{inc} = t/2(\alpha + \tfrac{(1-\alpha)(2+y)}{3})^2$ and $\pi^{e} = t/2(\alpha + \tfrac{(1-\alpha)(4-y)}{3})^2$. Notice that the profits for $\alpha=0$ case correspond to the base model profits, and for $\alpha=0$ - to the standard Hotelling.
+
+Now we expand the model to a two-period one.
+
+We assume the following information structure: while the probability of the consumer seeing the entrant is known to both producers and the same in each period, they do not know if the consumer is noticed. However, the choice of the consumer is public, so if entrant was chosen in the first period, both producers know that the true location of the entrant has been revealed. The intuition behind this setup is that while some ticket buyers may have heard about the entrant already, the bus lines have no way of knowing that; but they can perceive, if the consumer has bought tickets before; although, in truth, most bus lines do not engage in this level of price discrimination.
+
+The discounted sum of profits of the consumer is then:
+
+ $$ \begin{aligned}
+    \max_{p^{inc}_1, p^{inc}_2} {}
+    & \quad p^{inc}_1(\alpha Pr(x_1 \leq \frac{p^{e}_1-p^{inc}_1}{2t} + 1/2) + (1-\alpha)Pr(x_1 \leq \frac{p^{e}_1-p^{inc}_1}{2t} + 1/2y)) \\
+    & \quad + \beta(p^{inc}_2((\alpha Pr(x_1 \leq \frac{p^{e}_1-p^{inc}_1}{2t} + 1/2) + (1-\alpha)Pr(x_1 \leq \frac{p^{e}_1-p^{inc}_1}{2t} + 1/2y))* \\
+    & \quad (\alpha Pr(x_2 \leq \frac{p^{e}_2-p^{inc}_2}{2t} + 1/2) + (1-\alpha)Pr(x_2 \leq \frac{p^{e}_2-p^{inc}_2}{2t} + 1/2y)) +\\
+    & \quad \alpha Pr(x_1 > \frac{p^{e}_1-p^{inc}_1}{2t} + 1/2) + (1-\alpha)Pr(x_1 > \frac{p^{e}_1-p^{inc}_1}{2t} + 1/2y))*\\
+    & \quad Pr(x_2 > \frac{p^{e}_2-p^{inc}_2}{2t} + 1/2))
+    \end{aligned}
+    $$
+
+where $x_1$, $x_2$ are locations of the consumer in each period. Sum of discounted profits for entrant is symmetric. The expression can be simplified, however, we first solve for optimum in second period to put in values into the formula.
+
+If the entrant is chosen in the first period, the interaction corresponds to normal Hotelling linear city, which gives $p^{inc}_2=p^{e}_2 = t$ and the profits $\pi^{inc}_2 = \pi^{e}_2 = 1/2t$. If the entrant is not chosen, both producers need to consider again that consumer may or may not know the true location of the entrant. Then the interaction corresponds to the one period interaction we described for one-period game with $p^{inc}_2 = \alpha t + \tfrac{(1-\alpha)(2+y)t}{3}$ and $p^{e}_2 = \alpha t + \tfrac{(1-y)(4-y)t}{3}$. The profits are also equal to those in the one period game: $\pi^{inc} = t/2(\alpha + \tfrac{(1-\alpha)(2+y)}{3})^2$ and $\pi^{e} = t/2(\alpha + \tfrac{(1-\alpha)(4-y)}{3})^2$.
+
+Substitute those profits into the discounted sum of profits maximisation problem:
+
+$$ \begin{aligned}
+    \max_{p^{inc}_1} {}
+    & \quad p^{inc}_1(\alpha Pr(x_1 \leq \frac{p^{e}_1-p^{inc}_1}{2t} + 1/2) + (1-\alpha)Pr(x_1 \leq \frac{p^{e}_1-p^{inc}_1}{2t} + 1/2y)) + \\
+    & \quad + \beta((\alpha Pr(x_1 \leq \frac{p^{e}_1-p^{inc}_1}{2t} + 1/2) + (1-\alpha)Pr(x_1 \leq \frac{p^{e}_1-p^{inc}_1}{2t} + 1/2y))* \\
+    & \quad *(\alpha + \tfrac{(1-\alpha)(2+y)}{3})^2 t/2+ \tfrac{\alpha t}{2} Pr(x_1 > \frac{p^{e}_1-p^{inc}_1}{2t} + 1/2) + \\
+    & \quad + \tfrac{(1-\alpha)t}{2}Pr(x_1 > \frac{p^{e}_1-p^{inc}_1}{2t} + 1/2y))
+    \end{aligned}
+    $$
+   
+The profit of entrant is symmetric:
 
 
+$$ \begin{aligned}
+    \max_{p^{e}_1} {}
+    & \quad p^{e}_1(\alpha Pr(x_1 > \frac{p^{e}_1-p^{inc}_1}{2t} + 1/2) + (1-\alpha)Pr(x_1 > \frac{p^{e}_1-p^{inc}_1}{2t} + 1/2y)) + \\
+    & \quad + \beta((\alpha Pr(x_1 \leq \frac{p^{e}_1-p^{inc}_1}{2t} + 1/2) + (1-\alpha)Pr(x_1 \leq \frac{p^{e}_1-p^{inc}_1}{2t} + 1/2y))* \\
+    & \quad *(\alpha + \tfrac{(1-\alpha)(4-y)}{3})^2 t/2+ \tfrac{\alpha t}{2} Pr(x_1 > \frac{p^{e}_1-p^{inc}_1}{2t} + 1/2) + \\
+    & \quad + \tfrac{(1-\alpha)t}{2}Pr(x_1 > \frac{p^{e}_1-p^{inc}_1}{2t} + 1/2y))
+    \end{aligned}
+    $$
 
 
+Both can be simplified substantially. Solving for optimal $p^{inc}_1$ and $p^{e}_1$ we get:
 
+$$p^{inc}_1 = \alpha t + \tfrac{(1-\alpha)(2+y)t}{3} + \tfrac{\beta t}{54}(1-\alpha)(1-y)(17+ \alpha +y(1-\alpha))$$
+$$p^{e}_1 = \alpha t + \tfrac{(1-\alpha)(4-y)t}{3} + \tfrac{\beta t}{54}(1-\alpha)(1-y)(19 - \alpha -y(1-\alpha))$$
+
+Notice that the first, non-dynamic part of both expressions looks exactly like the corresponding prices for the second period. If $\alpha=1$ the prices collapse to the corresponding prices in the baseline model. If $\alpha=0$, then the prices are just standard Hotelling prices.
+
+\subsection{Comparative statics}
+
+(COMPARATIVE STATICS)
+
+\section{Network effects modelled with $\gamma$}
+
+While the previous setup tried to reflect possible advertising effects or brand loyalty, now we consider possible network effects. While in the first period the entrant starts out completely unknown to all consumers in the baseline model, it might be prudent to assume that consumers talk between themselves. If the first-period consumer choose the entrant, it might be easier for the second period consumer to try out the new company's goods, as he knows about the company from second-hand experience.
+
+Consider the baseline model with a few additional assumptions. In the first period the interaction is that of the baseline model, however, if the entrant was chosen, in the second period there is a probability $\\gamma$ that the entrant's true location is known to the consumer. The information structure is such: while the choice of the consumer is public, neither producer in the second period know if the consumer knows the entrant's location. Once the entrant is chosen by one consumer, next consumer knows his true location with probability $\gamma$.
+
+\subsection{Derivation}
+
+Mathematically, the setup is very close to both the previous section and the baseline model, which allows us to simplify the inference considerably. One-period game in this setup corresponds to that of baseline model, so we start directly with the two-period game.
+
+If the entrant was chosen in the first period, then the maximisation problem is one described in the previous section for unrevealed true location of entrant state. We know that the optimal prices are in this case: $p^{inc}_2 = \gamma t + \tfrac{(1-\gamma)(2+y)t}{3}$ and $p^{e}_2 = \gamma t + \tfrac{(1-y)(4-y)t}{3}$ with the corresponding profits $\pi^{inc} = t/2(\gamma + \tfrac{(1-\gamma)(2+y)}{3})^2$ and $\pi^{e} = t/2(\gamma + \tfrac{(1-\gamma)(4-y)}{3})^2$. If the entrant was not chosen, then the interaction in the first period repeats as per baseline model, which means that: $p^{inc}_2 =1/3t(y+ 2)$ and $ p^{e}_2 =4/3t - 1/3yt$ and the profits are:  $\pi_{2}^{e} = 1/18*t(4-y)^2$ and $\pi_{2}^{inc}=1/18*t(2+y)^2$. 
+
+The producers then maximize:
+
+$$ \begin{aligned}
+    \max_{p^{inc}_1} {}
+    & \quad p^{inc}_1(Pr(x_1 \leq \frac{p^{e}_1-p^{inc}_1}{2t} + 1/2y)) + \beta(\tfrac{t}{18} Pr(x_1 \leq \frac{p^{e}_1-p^{inc}_1}{2t} + 1/2y)(2+y)^2 + 	\\
+    & \quad \tfrac{t}{2}Pr(x_1 > \frac{p^{e}_1-p^{inc}_1}{2t} + 1/2y)(\gamma + \tfrac{(1-\gamma)(2+y)}{3})^2)
+    \end{aligned}
+    $$
+   
+$$ \begin{aligned}
+    \max_{p^{e}_1} {}
+    & \quad p^{e}_1(Pr(x_1 > \frac{p^{e}_1-p^{inc}_1}{2t} + 1/2y)) + \beta(\tfrac{t}{18} Pr(x_1 \leq \frac{p^{e}_1-p^{inc}_1}{2t} + 1/2y)(4-y)^2 + 	\\
+    & \quad \tfrac{t}{2}Pr(x_1 > \frac{p^{e}_1-p^{inc}_1}{2t} + 1/2y)(\gamma + \tfrac{(1-\gamma)(4-y)}{3})^2)
+    \end{aligned}
+    $$
+Solving for optimal price in the first period we get: 
+
+$$p^{inc}_1 = \tfrac{(2+y)t}{3} + \tfrac{\alpha \beta t}{54}(1-y)(9\gamma + (2-\gamma)(8+y))$$
+$$p^{e}_1 = \tfrac{(4-y)t}{3} + \tfrac{\gamma \beta t}{54}(1-y)(9 \gamma + (2-\gamma)(10-y))$$
+
+Notice that when $\gamma = 1$ the prices are the same as for baseline model and for $\gamma = 0$ they are constant between periods, as there is no dynamic effect as the consumers never learn the entrant's true location.
+
+\subsection{Comparative statics}
 
 
 
